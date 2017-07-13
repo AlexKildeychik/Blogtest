@@ -11,7 +11,7 @@ class db
       {
           $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test', 'root', '');
       }
-
+      //Выполнить любой sql запрос(подготовленный statement, результат true false)
       public function execute($sql, $params=[])
       {
           $sth = $this->dbh->prepare($sql);

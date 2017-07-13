@@ -7,7 +7,7 @@ $news = \App\Models\Article::getLastThree();
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Hypertext Preprocessor</title>
+    <title>Rat News</title>
     <style>
         .content {
             border: 1px solid #0975B5;
