@@ -1,1 +1,2 @@
 # RatNews
+MVC ORM News Project, already have Abstract Model + several models, what extends from amodel, also several static methods like: findAll(), findbyId($id), getlastTreeNews(), articleOne(); Methods what work with db: execute(not return any data, result=true/false), query method, who return data with if/else statement.
