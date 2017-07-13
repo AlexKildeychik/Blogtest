@@ -22,7 +22,9 @@ $news = \App\Models\Article::getLastThree();
 
 <div class="content">
     <?php foreach ($news as $text): ?>
+        <h3><?= $text->title; ?></h3>
     <p><?= $text->text; ?> </p>
+
 <?php endforeach; ?>
 </div>
 </body>

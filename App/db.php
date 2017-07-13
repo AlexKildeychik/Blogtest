@@ -17,7 +17,7 @@ class db
           $sth = $this->dbh->prepare($sql);
           return $sth->execute($params);
       }
-
+      //Возвращают данные
       public function query($sql, $class = stdClass::class, $params=[])
       {
           $sth = $this->dbh->prepare($sql);
