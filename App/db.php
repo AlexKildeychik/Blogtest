@@ -2,15 +2,28 @@
 
 
 namespace App;
-
+use \App\Config;
 
 class db
 {
-      protected $dbh;
+      private $dbh;
       public function __construct()
       {
-          $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test', 'root', '');
+          $instantConnect = Config::instance();
+          $this->dbh = new \PDO(
+              $this->setDbDsn(),
+              $instantConnect->data['db']['user'],
+              $instantConnect->data['db']['pass']
+          );
       }
+    public function setDbDsn()
+    {
+        $instantConnect = Config::instance();
+        $driver = $instantConnect->data['driver'];
+        $host = $instantConnect->data['db']['host'];
+        $name = $instantConnect->data['db']['name'];
+        return $driver . ':host=' . $host . ';dbname=' . $name;
+    }
       //Выполнить любой sql запрос(подготовленный statement, результат true false)
       public function execute($sql, $params=[])
       {
